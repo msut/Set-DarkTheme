@@ -3,6 +3,17 @@ function Set-LightTheme {
     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 1
 }
 
+<#
+.SYNOPSIS
+# Create a scheduled task to enable light theme.
+
+.PARAMETER taskTime
+What time to run the task.
+
+.EXAMPLE
+Add-EnableLightThemeTask -taskTime 7AM
+
+#>
 function Add-EnableLightThemeTask {
     param (
         [Parameter(Mandatory=$true)]    

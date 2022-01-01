@@ -3,7 +3,17 @@ function Set-DarkTheme {
     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0
 }
 
-function Add-EnableDarkThemeTask  {
+<#
+.SYNOPSIS
+# Create a scheduled task to enable dark theme.
+
+.PARAMETER taskTime
+What time to run the task.
+
+.EXAMPLE
+Add-EnableDarkThemeTask -taskTime 5PM
+
+#>function Add-EnableDarkThemeTask  {
     param (
         [Parameter(Mandatory=$true)]    
         [string] $taskTime
